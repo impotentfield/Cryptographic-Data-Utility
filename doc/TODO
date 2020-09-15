@@ -1,0 +1,11 @@
+There are alot of things you could do with a program of this nature and it is well, more simplified than gpg which
+may be a strength for a lot of you. so have fun editing... rich
+
+bcp: integrate bcp functionality into cpdu with even more features like pre file send chat windows and other things
+not to mention
+
+BIG FIXME
+encrypted file header information: so far the headers for encrypted files is handled very primitively as far as appropriate to the current functionality of the program. i would like to have a 'similar to pgp api' for file headers appropriate
+to how secure and neat it should be handled and with that it should change in tandem with how the internet based exchangecapabilities of the program are changed. the internet exchange part is mainly why im writing this program so the name
+cryptographic package distribution utility is one good reason why a community effort should precise efforts around the program.
+

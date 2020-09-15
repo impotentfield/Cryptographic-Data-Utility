@@ -1,0 +1,1 @@
+bool generate_key();

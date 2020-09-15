@@ -1,0 +1,15 @@
+there is a new option where all encryption keys are written to a master key database file located in '~/.cpdu/.keystore/.masterkeylist'
+it is not encrypted internally but remains exportable, meaning you can change the file to normal read/access permissions and save it on an external
+media or disk. so when you leave for the weekend, you can set up a script to save the keylist on a cdrw or a floppy and remove it from the local harddrive and then when you come back you can put it back in the ~/.cpdu/.keystore/ directory
+
+IMPORTANT:
+when exporting and placing the keylist back in the local filesystem, remember you have to copy/move the exported list to the same file/filename in the cpdu home directory, ~/.cpdu:
+
+the filename is always:
+'~/.cpdu/.keystore/.masterkeylist'
+
+so remember, dont lose the keylist and always put it back the specified way to make it active again
+
+also, you can also change the permissions on the recovery directory where plaintext files exists and export them as well to a external media/disk
+
+these options keep the program safe to use and also better to work with
