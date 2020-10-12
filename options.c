@@ -32,7 +32,7 @@ opts_t parse_options(int argc, char **argv)
 		{"help", 0, 0, 'h'},
 		{"version", 0, 0, 'V'},
 		{"verbose", 0, 0, 'v'},
-		{"bzlib", 0, 0, 'j'},
+//		{"bzlib", 0, 0, 'j'},
 		{"zlib", 0, 0, 'z'},
 		{"wipe", 0, 0, 'w'},
 		//{"stdin", 0, 0, 's'},
@@ -66,7 +66,7 @@ opts_t parse_options(int argc, char **argv)
 	};
 
 	int option_index = 0;
-	char *short_options = "h?Vedri:c:wzBEkSatTvmg:K:Z:jxA:HuRf";
+	char *short_options = "h?Vedri:c:wzBEkSatTvmg:K:Z:xA:HuRf";
 	int c, numopts;
 	opts_t options;
 	int gotarchivearg;
@@ -157,9 +157,9 @@ opts_t parse_options(int argc, char **argv)
 //			options->verbose = atoi(optarg);
 			options->verbose = 1;
 		break;
-		case 'j':
-			options->bzlib = 1;
-		break;
+//		case 'j':
+//			options->bzlib = 1;
+//		break;
 		case 'm':
 			options->keylist = 1;
 		break;
@@ -306,14 +306,19 @@ void display_help(char *arg)
 		"-r, --recurse,                recursive directory search\n"
 //		"-s, --stdin,                  stdin, stdout\n"
 		"-z, --zlib,                   zlib compression for archives or files\n"
-		"-j, --bzlib,                  bzlib compression for archives or files\n"
+//		"-j, --bzlib,                  bzlib compression for archives or files\n"
 		"-A, --Archive, 'archive'      load or unload archive with session files. if string contains no appended . extension, .cpdu.package is appended. zlib compression is default.\n"
-        	"-a, --archive,                load archive with session files. this option uses the first directory or filename for the archive string and .cpdu.package is appended. zlib compression is default.\n"
+        	"-a, --archive,                load archive with session files. this option uses the first directory or filename for the archive string and .cpdu.package is appended. \
+        	                               zlib compression is default.\n"
 		"-i, --archivelist, 'archive'  print list of files within encrypted archive 'archive'\n"
 		"-t, --rmpath,                 for archive, remove relative paths of single files on command line\n"
 		"-T, --rmapath,                for archive, remove all relative paths of files\n"
 		"-w, --wipe,                   wipe original copy(s) of encryption session file(s) with secure random numbers 15x/ovr after encryption\n"
-		"-K, --keyfile, 'file'         use 'file' for session key. TAKE NOTICE: the keyfile data will be code book block encrypted as one data stream (each read is encrypted to return a continual encrypted key over each read) and crunched the size of the current cipher's valid keylength and stored in .masterkeylist with a valid cipher context keylength. the .masterkeylist copy of the key and the keyfile used are both valid decryption keys for the encrypted file(s).\n"
+		"-K, --keyfile, 'file'         use 'file' for session key. TAKE NOTICE: the keyfile data will be code book block encrypted\n \
+                                              as one data stream (each read is encrypted to return a continual encrypted key over each\n \
+                                              read) and crunched the size of the current cipher's valid keylength and stored in\n \
+                                              .masterkeylist with a valid cipher context keylength. the .masterkeylist copy of the key\n \
+                                              and the keyfile used are both valid decryption keys for the encrypted file(s).\n"
 		"-S, --slkeyset,               local secure key set passphrase prompt\n"
 		"-k, --slkey,                  local secure key for session\n"
 		"-g, --genkey,      'file'     generate a secure keyfile with random character bytes using the secure random number generator device files\n"
