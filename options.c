@@ -48,7 +48,7 @@ opts_t parse_options(int argc, char **argv)
 		{"secure", 0, 0, 'f'},
 		{"masterkey", 0, 0, 'm'},
 		{"genkey", 1, 0, 'g'},
-		{"filekey", 1, 0, 'K'},
+//		{"filekey", 1, 0, 'K'},
 		{"sizekey", 1, 0, 'Z'},
 		{"commitkey", 0, 0, 'x'},
 	//	{"progress", 0, 0, 'p'},
@@ -66,7 +66,7 @@ opts_t parse_options(int argc, char **argv)
 	};
 
 	int option_index = 0;
-	char *short_options = "h?Vedri:c:wzBEkSatTvmg:K:Z:xA:HuRf";
+	char *short_options = "h?Vedri:c:wzBEkSatTvmg:Z:xA:HuRf";
 	int c, numopts;
 	opts_t options;
 	int gotarchivearg;
@@ -211,10 +211,10 @@ opts_t parse_options(int argc, char **argv)
 			options->genkeyfile = 1;
 			options->keyfile = optarg;
 		break;
-		case 'K':
-			options->usekeyfile = 1;
-			options->keyfile = optarg;
-		break;
+//		case 'K':
+//			options->usekeyfile = 1;
+//			options->keyfile = optarg;
+//		break;
 //		case 'P':
 //			options->progress = 1;
 //			options->progress_piouemy = 0;
@@ -314,11 +314,13 @@ void display_help(char *arg)
 		"-t, --rmpath,                 for archive, remove relative paths of single files on command line\n"
 		"-T, --rmapath,                for archive, remove all relative paths of files\n"
 		"-w, --wipe,                   wipe original copy(s) of encryption session file(s) with secure random numbers 15x/ovr after encryption\n"
+/*
 		"-K, --keyfile, 'file'         use 'file' for session key. TAKE NOTICE: the keyfile data will be code book block encrypted\n \
                                               as one data stream (each read is encrypted to return a continual encrypted key over each\n \
                                               read) and crunched the size of the current cipher's valid keylength and stored in\n \
                                               .masterkeylist with a valid cipher context keylength. the .masterkeylist copy of the key\n \
                                               and the keyfile used are both valid decryption keys for the encrypted file(s).\n"
+*/
 		"-S, --slkeyset,               local secure key set passphrase prompt\n"
 		"-k, --slkey,                  local secure key for session\n"
 		"-g, --genkey,      'file'     generate a secure keyfile with random character bytes using the secure random number generator device files\n"
