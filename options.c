@@ -308,8 +308,7 @@ void display_help(char *arg)
 		"-z, --zlib,                   zlib compression for archives or files\n"
 //		"-j, --bzlib,                  bzlib compression for archives or files\n"
 		"-A, --Archive, 'archive'      load or unload archive with session files. if string contains no appended . extension, .cpdu.package is appended. zlib compression is default.\n"
-        	"-a, --archive,                load archive with session files. this option uses the first directory or filename for the archive string and .cpdu.package is appended. \
-        	                               zlib compression is default.\n"
+        	"-a, --archive,                load archive with session files. this option uses the first directory or filename for the archive string and .cpdu.package is appended. zlib compression is default.\n"
 		"-i, --archivelist, 'archive'  print list of files within encrypted archive 'archive'\n"
 		"-t, --rmpath,                 for archive, remove relative paths of single files on command line\n"
 		"-T, --rmapath,                for archive, remove all relative paths of files\n"
